@@ -7,19 +7,20 @@ import dash_bootstrap_components as dbc
 from app import server
 from app import app
 # import all pages in the app
-from apps import global_situation, singapore, home
+from apps import hw1to6, hw7, singapore, home
 
 # building the navigation bar
 # https://github.com/facultyai/dash-bootstrap-components/blob/master/examples/advanced-component-usage/Navbars.py
 dropdown = dbc.DropdownMenu(
     children=[
         dbc.DropdownMenuItem("Home", href="/home"),
-        dbc.DropdownMenuItem("Global", href="/global_situation"),
-        dbc.DropdownMenuItem("Singapore", href="/singapore"),
+        dbc.DropdownMenuItem("HW 1-6", href="/hw1to6"),
+        dbc.DropdownMenuItem("HW 7", href="/hw7"),
+        #dbc.DropdownMenuItem("Singapore", href="/singapore"),
     ],
     nav = True,
     in_navbar = True,
-    label = "Explore",
+    label = "Explore HW",
 )
 
 navbar = dbc.Navbar(
@@ -29,8 +30,8 @@ navbar = dbc.Navbar(
                 # Use row and col to control vertical alignment of logo / brand
                 dbc.Row(
                     [
-                        dbc.Col(html.Img(src="/assets/virus.png", height="30px")),
-                        dbc.Col(dbc.NavbarBrand("COVID-19 DASH", className="ml-2")),
+                        dbc.Col(html.Img(src="/assets/ds3.png", height="40px")),
+                        dbc.Col(dbc.NavbarBrand("Svet's Data Science Dash", className="ml-2")),
                     ],
                     align="center",
                     no_gutters=True,
@@ -76,8 +77,10 @@ app.layout = html.Div([
 @app.callback(Output('page-content', 'children'),
               [Input('url', 'pathname')])
 def display_page(pathname):
-    if pathname == '/global_situation':
-        return global_situation.layout
+    if pathname == '/hw1to6':
+        return hw1to6.layout
+    elif pathname == '/hw7':
+        return hw7.layout
     elif pathname == '/singapore':
         return singapore.layout
     else:

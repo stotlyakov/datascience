@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{d751625b-7e8d-4201-b879-8ebde1337a0e}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>app.py</StartupFile>
+    <StartupFile>index.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -19,14 +19,18 @@
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="assets\virus.png" />
+    <Content Include="assets\ds3.png" />
+    <Content Include="data\sacramento_real_estate_transactions.csv" />
     <Content Include="requirements.txt" />
     <Content Include="runtime.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="app.py" />
-    <Compile Include="apps\global_situation.py" />
+    <Compile Include="apps\hw1to6.py" />
     <Compile Include="apps\home.py" />
+    <Compile Include="apps\hw7.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="apps\singapore.py" />
     <Compile Include="apps\__init__.py" />
     <Compile Include="index.py" />
@@ -34,6 +38,7 @@
   <ItemGroup>
     <Folder Include="apps" />
     <Folder Include="assets" />
+    <Folder Include="data\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
 </Project>

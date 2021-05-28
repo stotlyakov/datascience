@@ -1,18 +1,12 @@
 import plotly.graph_objects as go
 import pandas as pd
-
 import dash
+import dash_table
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
-
 from app import app
-
-# needed if running single page dash app instead
-#external_stylesheets = [dbc.themes.LUX]
-
-#app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 df = pd.read_csv('COVID-19-geographic-disbtribution-worldwide.csv', index_col = 0)
 
@@ -22,8 +16,8 @@ df.index = pd.to_datetime(df.index, format='%d/%m/%y')
 df = df.sort_index()
 # convert number of cases and deaths to per 1 million population figures
 # to allow for comparison
-df['cases per 1 mil'] = df['cases']/df['popData2018']*1000000
-df['deaths per 1 mil'] = df['deaths']/df['popData2018']*1000000
+df['cases per 1 mil'] = df['cases'] / df['popData2018'] * 1000000
+df['deaths per 1 mil'] = df['deaths'] / df['popData2018'] * 1000000
 # exclude observations from the Japan cruise ship
 df = df[df.continentExp != 'Other']
 
@@ -45,98 +39,80 @@ df5 = df5.reset_index()
 df5['cases per 1 mil'] = df5.groupby(['continentExp'])['cases per 1 mil'].apply(lambda x: x.cumsum())
 df5['deaths per 1 mil'] = df5.groupby(['continentExp'])['deaths per 1 mil'].apply(lambda x: x.cumsum())
 
+dfDisplay = df.drop(columns=['countriesAndTerritories','countryterritoryCode'], axis=1)
+
 # good if there are many options
 available_countries = df['countriesAndTerritories'].unique()
 
 # change to app.layout if running as single page app instead
-layout = html.Div([
-    dbc.Container([
-        dbc.Row([
-            dbc.Col(html.H1(children='COVID-19 Worldwide at a glance'), className="mb-2")
-        ]),
-        dbc.Row([
-            dbc.Col(html.H6(children='Visualising trends across the world'), className="mb-4")
-        ]),
+layout = html.Div([dbc.Container([dbc.Row([dbc.Col(html.H1(children='COVID-19 Worldwide at a glance'), className="mb-2")]),
+        dbc.Row([dbc.Col(html.H6(children='Visualising trends across the world using Dash, Plotly and Pandas'), className="mb-4")]),
+        
 # choose between cases or deaths
-    dcc.Dropdown(
-        id='cases_or_deaths',
-        options=[
-            {'label': 'Cases per 1 million people', 'value': 'cases per 1 mil'},
-            {'label': 'Deaths per 1 million people', 'value': 'deaths per 1 mil'},
-        ],
+    dcc.Dropdown(id='cases_or_deaths',
+        options=[{'label': 'Cases per 1 million people', 'value': 'cases per 1 mil'},
+            {'label': 'Deaths per 1 million people', 'value': 'deaths per 1 mil'},],
         value='cases per 1 mil',
         #multi=True,
-        style={'width': '50%'}
-        ),
+        style={'width': '50%'}),
 # for some reason, font colour remains black if using the color option
-    dbc.Row([
-        dbc.Col(dbc.Card(html.H3(children='Daily figures by continent (per 1 million people)',
-                                 className="text-center text-light bg-dark"), body=True, color="dark")
-        , className="mt-4 mb-4")
-    ]),
-    dbc.Row([
-        dbc.Col(html.H5(children='Latest update: 7 June 2020', className="text-center"),
+    dbc.Row([dbc.Col(dbc.Card(html.H3(children='Daily figures by continent (per 1 million people)',
+                                 className="text-center text-light bg-dark"), body=True, color="dark"), className="mt-4 mb-4")], style={'width': '100%'}),
+    dbc.Row([dbc.Col(html.H5(children='Latest update: 7 June 2020', className="text-center"),
                          width=4, className="mt-4"),
-        dbc.Col(html.H5(children='Daily figures since 31 Dec 2019', className="text-center"), width=8, className="mt-4"),
-        ]),
+        dbc.Col(html.H5(children='Daily figures since 31 Dec 2019', className="text-center"), width=8, className="mt-4"),]),
+    dbc.Row([dbc.Col(dcc.Graph(id='pie_cases_or_deaths'), width=4),
+        dbc.Col(dcc.Graph(id='line_cases_or_deaths'), width=8)]),
 
-
-    dbc.Row([
-        dbc.Col(dcc.Graph(id='pie_cases_or_deaths'), width=4),
-        dbc.Col(dcc.Graph(id='line_cases_or_deaths'), width=8)
-        ]),
-
-        dbc.Row([
-            dbc.Col(dbc.Card(html.H3(children='Cumulative figures by continent (per 1 million people)',
+        dbc.Row([dbc.Col(dbc.Card(html.H3(children='Cumulative figures by continent (per 1 million people)',
                                      className="text-center text-light bg-dark"), body=True, color="dark")
-                    , className="mb-4")
-        ]),
-        dbc.Row([
-            dbc.Col(html.H5(children='Latest update: 7 June 2020', className="text-center"),
+                    , className="mb-4")]),
+        dbc.Row([dbc.Col(html.H5(children='Latest update: 7 June 2020', className="text-center"),
                     width=4, className="mt-4"),
             dbc.Col(html.H5(children='Cumulative figures since 31 Dec 2019', className="text-center"), width=8,
-                    className="mt-4"),
-        ]),
+                    className="mt-4"),]),
 
-    dbc.Row([
-        dbc.Col(dcc.Graph(id='total_pie_cases_or_deaths'), width=4),
-        dbc.Col(dcc.Graph(id='total_line_cases_or_deaths'), width=8)
-    ]),
+    dbc.Row([dbc.Col(dcc.Graph(id='total_pie_cases_or_deaths'), width=4),
+        dbc.Col(dcc.Graph(id='total_line_cases_or_deaths'), width=8)]),
 
-    dbc.Row([
-        dbc.Col(dbc.Card(html.H3(children='Figures by country (per 1 million people)',
+    dbc.Row([dbc.Col(dbc.Card(html.H3(children='Figures by country (per 1 million people)',
                                  className="text-center text-light bg-dark"), body=True, color="dark")
-        , className="mb-4")
-        ]),
+        , className="mb-4")]),
 
-    dcc.Dropdown(
-        id='countries',
+    dcc.Dropdown(id='countries',
         options=[{'label': i, 'value': i} for i in available_countries],
         value=['Sweden', 'Switzerland'],
         multi=True,
-        style={'width': '70%', 'margin-left': '5px'}
-    ),
+        style={'width': '70%', 'margin-left': '5px'}),
 
-    dbc.Row([
-        dbc.Col(html.H5(children='Daily figures', className="text-center"),
-                className="mt-4"),
-    ]),
+    dbc.Row([dbc.Col(html.H5(children='Daily figures', className="text-center"),
+                className="mt-4"),]),
 
     dcc.Graph(id='cases_or_deaths_country'),
 
-    dbc.Row([
-        dbc.Col(html.H5(children='Cumulative figures', className="text-center"),
-                className="mt-4"),
-    ]),
-
+    dbc.Row([dbc.Col(html.H5(children='Cumulative figures', className="text-center"),
+                className="mt-4"),]),
     dcc.Graph(id='total_cases_or_deaths_country'),
-
-])
-
-
-])
+         dash_table.DataTable(id='datatable_h6',
+       # style_table={'overflowX': 'scroll'},
+        style_header={'backgroundColor': '#343a40', 'color': 'white'},
+        style_cell={
+            'backgroundColor': 'white',
+            'color': 'black',
+            'fontSize': 13,
+            'font-family': 'Nunito Sans'},
+        columns=[{"name": i, "id": i} for i in dfDisplay.columns],
+         style_data_conditional=[{
+            'if': {'row_index': 'odd'},
+            'backgroundColor': 'rgb(248, 248, 248)'
+        }],
+        sort_action="native",
+        sort_mode="multi",
+        page_size=10,
+        data=df.to_dict('records')),])])
 
 # page callbacks
+
 # display pie charts and line charts to show number of cases or deaths
 @app.callback([Output('pie_cases_or_deaths', 'figure'),
                Output('line_cases_or_deaths', 'figure'),
@@ -146,9 +122,7 @@ layout = html.Div([
 
 def update_graph(choice):
 
-    fig = go.Figure(data=[
-        go.Pie(labels=df3['continentExp'], values=df3[choice])
-        ])
+    fig = go.Figure(data=[go.Pie(labels=df3['continentExp'], values=df3[choice])])
 
     fig.update_layout(paper_bgcolor='rgba(0,0,0,0)',
                       plot_bgcolor='rgba(0,0,0,0)',
@@ -170,9 +144,7 @@ def update_graph(choice):
                        template = "seaborn",
                        margin=dict(t=0))
 
-    fig3 = go.Figure(data=[
-        go.Pie(labels=df4.index, values=df4[choice])
-        ])
+    fig3 = go.Figure(data=[go.Pie(labels=df4.index, values=df4[choice])])
 
     fig3.update_layout(paper_bgcolor='rgba(0,0,0,0)',
                        plot_bgcolor='rgba(0,0,0,0)',
@@ -245,6 +217,3 @@ def update_graph(cases_or_deaths_name, countries_name):
 
     return fig5, fig6
 
-# needed only if running this as a single page app
-# if __name__ == '__main__':
-#     app.run_server(host='127.0.0.1', debug=True)
