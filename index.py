@@ -2,8 +2,6 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State
 import dash_bootstrap_components as dbc
-
-# must add this line in order for the app to be deployed successfully on Heroku
 from app import server
 from app import app
 # import all pages in the app
@@ -16,7 +14,6 @@ dropdown = dbc.DropdownMenu(
         dbc.DropdownMenuItem("Home", href="/home"),
         dbc.DropdownMenuItem("HW 1-6", href="/hw1to6"),
         dbc.DropdownMenuItem("HW 7", href="/hw7"),
-        #dbc.DropdownMenuItem("Singapore", href="/singapore"),
     ],
     nav = True,
     in_navbar = True,
