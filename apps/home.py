@@ -9,7 +9,7 @@ layout = html.Div([dbc.Container([dbc.Row([dbc.Col(html.H1("Welcome to Svet's da
 
         dbc.Row([dbc.Col(dbc.Card(children=[html.H3(children='HW 1-6 - Pandas and Plotly intro',
                                                className="text-center"),
-                                       dbc.Row([dbc.Col(dbc.Button("GitHub", href="",
+                                       dbc.Row([dbc.Col(dbc.Button("GitHub", href="https://github.com/stotlyakov/datascience/blob/main/apps/hw1to6.py",
                                                                    color="light"),
                                                         className="mt-3"),
                                                 dbc.Col(dbc.Button("HW 1-6", href="/hw1to6",
@@ -21,7 +21,7 @@ layout = html.Div([dbc.Container([dbc.Row([dbc.Col(html.H1("Welcome to Svet's da
             dbc.Col(dbc.Card(children=[html.H3(children='HW 7 - Linear Regression',
                                                className="text-center"),
                                       
-                                       dbc.Row([dbc.Col(dbc.Button("GitHub", href="",
+                                       dbc.Row([dbc.Col(dbc.Button("GitHub", href="https://github.com/stotlyakov/datascience/blob/main/apps/hw7.py",
                                                                    color="light"),
                                                         className="mt-3"),
                                                 dbc.Col(dbc.Button("HW 7", href="/hw7",
