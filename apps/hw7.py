@@ -86,10 +86,13 @@ plt.savefig('assets/testLinear.png')
 # change to app.layout if running as single page app instead
 layout = html.Div([dbc.Container([dbc.Row([dbc.Col(html.H1(children='Simple Linear Regression with Sacramento Real Estate Data'), className="mb-2")]),
 
-        dbc.Row([dbc.Col(html.H6(children='Visualising out linear forcast, Price vs Sq feet'), className="mb-4")]),
+        dbc.Row([dbc.Col(dbc.Card(html.H3(children='Visualising out linear forcast, Price vs Sq feet', className="text-center text-light bg-dark"), body=True, color="dark"))]),
 
+        html.Br(),html.Br(),
         html.Img(src="/assets/testLinear.png", height='800px'),
-        #html.Iframe(src='/home/makinde/test2.html')
+        html.Br(),
+        dbc.Row([dbc.Col(dbc.Card(html.H3(children='Dataset', className="text-center text-light bg-dark"), body=True, color="dark"))]),
+        html.Br(),
          dash_table.DataTable(id='datatable_h6',
        style_table={'overflowY': 'scroll',
                     'height': 400,},

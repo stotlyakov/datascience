@@ -20,6 +20,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="assets\ds3.png" />
+    <Content Include="data\int_rates_testing.csv" />
+    <Content Include="data\int_rates_training.csv" />
     <Content Include="data\sacramento_real_estate_transactions.csv" />
     <Content Include="requirements.txt" />
     <Content Include="runtime.txt" />
@@ -29,6 +31,9 @@
     <Compile Include="apps\hw1to6.py" />
     <Compile Include="apps\home.py" />
     <Compile Include="apps\hw7.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="apps\hw8.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="apps\singapore.py" />
