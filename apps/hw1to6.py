@@ -8,7 +8,7 @@ from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 from app import app
 
-df = pd.read_csv('COVID-19-geographic-disbtribution-worldwide.csv', index_col = 0)
+df = pd.read_csv('data/COVID-19-geographic-disbtribution-worldwide.csv', index_col = 0)
 
 # preparing various dataframes for visualisation
 from datetime import datetime
@@ -45,7 +45,15 @@ dfDisplay = df.drop(columns=['countriesAndTerritories','countryterritoryCode'], 
 available_countries = df['countriesAndTerritories'].unique()
 
 # change to app.layout if running as single page app instead
-layout = html.Div([dbc.Container([dbc.Row([dbc.Col(html.H1(children='COVID-19 Worldwide at a glance'), className="mb-2")]),
+layout = html.Div([dbc.Container([
+        
+        dbc.Row([dbc.Col(dbc.Card(
+            dbc.Row([
+            dcc.Link(html.A('GitHub'), href="https://github.com/stotlyakov/datascience/blob/main/apps/hw1to6.py", style={'color': 'white', 'text-decoration': 'underline'}, target="_blank"),
+            dcc.Link(html.A('Data set: COVID-19-geographic-disbtribution-worldwide.csv'), href="https://github.com/stotlyakov/datascience/tree/main/data/COVID-19-geographic-disbtribution-worldwide.csv", style={'color': 'white', 'text-decoration': 'underline', 'margin-left':'10px','margin-right':'10px'}, target="_blank")]),
+           body=True, color="dark"))]),
+        html.Br(),
+        dbc.Row([dbc.Col(html.H1(children='COVID-19 Worldwide at a glance'), className="mb-2")]),
         dbc.Row([dbc.Col(html.H6(children='Visualising trends across the world using Dash, Plotly and Pandas'), className="mb-4")]),
         
 # choose between cases or deaths

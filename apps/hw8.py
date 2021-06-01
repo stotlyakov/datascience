@@ -62,7 +62,19 @@ y_preds = lr.predict(X_test)
 fig=sns.regplot(x=y_preds, y=y_test)
 #Can't figure out how to display sns figure on html so show the image created fom the python notebook.
 
-layout = html.Div([dbc.Container([dbc.Row([dbc.Col(html.H1(children='Train-test split: Interest Rates'), className="mb-2")]),
+layout = html.Div([dbc.Container([
+    
+        dbc.Row([dbc.Col(dbc.Card(
+        dbc.Row([
+        dcc.Link(html.A('GitHub'), href="https://github.com/stotlyakov/datascience/blob/main/apps/hw8.py", style={'color': 'white', 'text-decoration': 'underline'}, target="_blank"),
+        dcc.Link(html.A('Testing data set: int_rates_testing.csv'), href="https://github.com/stotlyakov/datascience/blob/main/data/int_rates_testing.csv", style={'color': 'white', 'text-decoration': 'underline', 'margin-left':'10px','margin-right':'10px'},target="_blank"),
+        dcc.Link(html.A('Training data set: int_rates_training.csv'), href="https://github.com/stotlyakov/datascience/blob/main/data/int_rates_training.csv", style={'color': 'white', 'text-decoration': 'underline', 'margin-left':'10px','margin-right':'10px'},target="_blank")
+        ]),
+
+        body=True, color="dark"))]),
+        html.Br(),
+
+        dbc.Row([dbc.Col(html.H1(children='Train-test split: Interest Rates'), className="mb-2")]),
 
         dbc.Row([dbc.Col(html.H6(children='Examine government bond interest rates from the US treasury and business/financial news headlines from various sources, to see if we can predict the changes in interest rates from the news. The question we are getting at is: do news headlines give us an indication of future changes in interest rates?'), className="mb-4")]),
         
