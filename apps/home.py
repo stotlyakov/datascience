@@ -42,7 +42,7 @@ layout = html.Div([dbc.Container([dbc.Row([dbc.Col(html.H1("Welcome to Svet's da
                              body=True, color="dark", outline=True)
                     , width=4, className="mb-4"),
 
-            dbc.Col(dbc.Card(children=[html.H3(children='HW 9 - Logistic Regression',
+            dbc.Col(dbc.Card(children=[html.H3(children='HW 9 - Logistic Regression (Under development)',
                                                className="text-center"),
                                        dbc.Row([dbc.Col(dbc.Button("GitHub", href="",target="_blank",
                                                                    color="light"),
@@ -52,7 +52,7 @@ layout = html.Div([dbc.Container([dbc.Row([dbc.Col(html.H1("Welcome to Svet's da
                                                         className="mt-3")], justify="center")],
                              body=True, color="dark", outline=True)
                     , width=4, className="mb-4"),
-            dbc.Col(dbc.Card(children=[html.H3(children='HW 10 - K Nearest Neighbors',
+            dbc.Col(dbc.Card(children=[html.H3(children='HW 10 - K Nearest Neighbors (Under development)',
                                                className="text-center"),
                                        dbc.Row([dbc.Col(dbc.Button("GitHub", href="",target="_blank",
                                                                    color="light"),
@@ -62,7 +62,7 @@ layout = html.Div([dbc.Container([dbc.Row([dbc.Col(html.H1("Welcome to Svet's da
                                                         className="mt-3")], justify="center")],
                              body=True, color="dark", outline=True)
                     , width=4, className="mb-4"),
-             dbc.Col(dbc.Card(children=[html.H3(children='HW 11 - Decision Trees',
+             dbc.Col(dbc.Card(children=[html.H3(children='HW 11 - Decision Trees (Under development)',
                                                className="text-center"),
                                        dbc.Row([dbc.Col(dbc.Button("GitHub", href="",target="_blank",
                                                                    color="light"),
