@@ -86,12 +86,12 @@ plt.savefig('assets/testLinear.png')
 # change to app.layout if running as single page app instead
 layout = html.Div([dbc.Container([
     
-            dbc.Row([dbc.Col(dbc.Card(
-            dbc.Row([
-            dcc.Link(html.A('GitHub'), href="https://github.com/stotlyakov/datascience/blob/main/apps/hw7.py", style={'color': 'white', 'text-decoration': 'underline'}, target="_blank"),
-            dcc.Link(html.A('Data set: sacramento_real_estate_transactions.csv'), href="https://github.com/stotlyakov/datascience/blob/main/data/sacramento_real_estate_transactions.csv", style={'color': 'white', 'text-decoration': 'underline', 'margin-left':'10px','margin-right':'10px'},target="_blank")]),
-           body=True, color="dark"))]),
-            html.Br(),
+        dbc.Row([dbc.Col(dbc.Card(
+        dbc.Row([
+        dcc.Link(html.A('GitHub'), href="https://github.com/stotlyakov/datascience/blob/main/apps/hw7.py", style={'color': 'white', 'text-decoration': 'underline'}, target="_blank"),
+        dcc.Link(html.A('Data set: sacramento_real_estate_transactions.csv'), href="https://github.com/stotlyakov/datascience/blob/main/data/sacramento_real_estate_transactions.csv", style={'color': 'white', 'text-decoration': 'underline', 'margin-left':'10px','margin-right':'10px'},target="_blank")]),
+        body=True, color="dark"))]),
+        html.Br(),
 
         dbc.Row([dbc.Col(html.H1(children='Simple Linear Regression with Sacramento Real Estate Data'), className="mb-2")]),
 
