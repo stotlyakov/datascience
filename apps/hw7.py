@@ -68,8 +68,8 @@ shd['Residuals'] = abs(shd['price'] - shd['Pred'])
 # on average how off our prediction is.
 
 # Plot showing out linear forcast
+plt.figure(0)
 fig = plt.figure(figsize=(20,20))
-
 # change the fontsize of minor ticks label
 plot = fig.add_subplot(111)
 plot.tick_params(axis='both', which='major', labelsize=20)
