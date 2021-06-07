@@ -71,4 +71,15 @@ layout = html.Div([dbc.Container([dbc.Row([dbc.Col(html.H1("Welcome to Svet's da
                                                                    color="light"),
                                                         className="mt-3")], justify="center")],
                              body=True, color="dark", outline=True)
-                    , width=4, className="mb-4"),], className="mb-5"),])])
+                    , width=4, className="mb-4"),
+             dbc.Col(dbc.Card(children=[html.H3(children='HW 12-13 - Clustering and PCA',
+                                               className="text-center"),
+                                       dbc.Row([dbc.Col(dbc.Button("GitHub", href="https://github.com/stotlyakov/datascience/blob/main/apps/hw12_13.py",target="_blank",
+                                                                   color="light"),
+                                                        className="mt-3"),
+                                                dbc.Col(dbc.Button("HW 11", href="/hw12_13",
+                                                                   color="light"),
+                                                        className="mt-3")], justify="center")],
+                             body=True, color="dark", outline=True)
+                    , width=4, className="mb-4"),
+             ], className="mb-5"),])])
