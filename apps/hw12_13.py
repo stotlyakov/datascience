@@ -154,9 +154,8 @@ layout = html.Div([dbc.Container([
     
         dbc.Row([dbc.Col(dbc.Card(
         dbc.Row([
-        dcc.Link(html.A('GitHub'), href="https://github.com/stotlyakov/datascience/blob/main/apps/hw8.py", style={'color': 'white', 'text-decoration': 'underline'}, target="_blank"),
-        dcc.Link(html.A('Testing data set: int_rates_testing.csv'), href="https://github.com/stotlyakov/datascience/blob/main/data/int_rates_testing.csv", style={'color': 'white', 'text-decoration': 'underline', 'margin-left':'10px','margin-right':'10px'},target="_blank"),
-        dcc.Link(html.A('Training data set: int_rates_training.csv'), href="https://github.com/stotlyakov/datascience/blob/main/data/int_rates_training.csv", style={'color': 'white', 'text-decoration': 'underline', 'margin-left':'10px','margin-right':'10px'},target="_blank")
+        dcc.Link(html.A('GitHub'), href="https://github.com/stotlyakov/datascience/blob/main/apps/hw12_13.py", style={'color': 'white', 'text-decoration': 'underline'}, target="_blank"),
+        dcc.Link(html.A('Python notebook for HW 12 and 13'), href="https://github.com/stotlyakov/datascience/blob/main/notebooks/Image_with_clustering.ipynb", style={'color': 'white', 'text-decoration': 'underline', 'margin-left':'10px','margin-right':'10px'},target="_blank"),
         ]),
 
         body=True, color="dark"))]),
