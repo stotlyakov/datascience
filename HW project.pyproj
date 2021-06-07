@@ -26,6 +26,9 @@
     <Content Include="data\sacramento_real_estate_transactions.csv" />
     <Content Include="requirements.txt" />
     <Content Include="runtime.txt" />
+    <Content Include="startup.sh">
+      <SubType>Code</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="app.py" />
