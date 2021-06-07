@@ -1,2 +1,2 @@
 #!/bin/bash
-apt-get install -y libxrender-de
+apt-get install -y libxrender-dev
