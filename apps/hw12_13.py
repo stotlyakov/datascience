@@ -160,6 +160,12 @@ layout = html.Div([dbc.Container([
 
         body=True, color="dark"))]),
         html.Br(),
+        dbc.Row([dbc.Col(html.H6(children='''This report will explore how to do image segmentation using k-means 
+        clustering. This approach is used in medical imaging object detection, traffic control system and video 
+        surveillance. In addition, we will compress the image using PCA.'''), className="mb-4")]),
+
+
+        html.Br(),
         dbc.Row([dbc.Col(html.H4(children='Original image 1200x675 px'), className="mb-2")]),
         html.Br(),
         html.Img(src="/assets/image.jpeg", height='300px'),
