@@ -6,5 +6,5 @@
 #apt-get install ffmpeg libsm6 libxext6
 #apt-get install -y python3-opencv
 #pip install opencv-python
-apt update && apt install -y libsm6 libxext6 ffmpeg libfontconfig1 libxrender1 libgl1-mesa-glx
+apt-get --ignore-missing install -y libsm6 libxext6 ffmpeg libfontconfig1 libxrender1 libgl1-mesa-glx
 gunicorn --bind=0.0.0.0 --timeout 600 index:server
