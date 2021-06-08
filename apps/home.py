@@ -94,7 +94,7 @@ layout = html.Div([dbc.Container([
 
 def load_output(n):
     if n:
-        time.sleep(30)
+        time.sleep(60)
         return True
     
     return True
