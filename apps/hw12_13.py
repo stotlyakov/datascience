@@ -268,6 +268,12 @@ layout = html.Div([dbc.Container([
         dcc.Graph(id="graphimgeCompressed_100", figure = imgeCompressed_100, style={ "width" :"530px", "margin-bottom":"10px","display": "inline-block"}),
         dcc.Graph(id="graphimgeCompressed_400", figure = imgeCompressed_400, style={ "width" :"530px", "margin-bottom":"10px","display": "inline-block"}),
         dcc.Graph(id="graphimgeCompressed_675", figure = imgeCompressed_675, style={ "width" :"530px", "margin-bottom":"10px","display": "inline-block"}),
-
+        html.Br(),
+        html.Br(),
+        dbc.Row([dbc.Col(html.H4(children='Resources:'), className="mb-2")]),
+        dcc.Link(html.A('Principal Component Analysis For Image Data in Python'), href="https://www.askpython.com/python/examples/principal-component-analysis-for-image-data", style={'color': 'white', 'text-decoration': 'underline'}, target="_blank"),html.Br(),
+        dcc.Link(html.A('Image Segmentation using K Means Clustering'), href="https://www.geeksforgeeks.org/image-segmentation-using-k-means-clustering/", style={'color': 'white', 'text-decoration': 'underline'}, target="_blank"),html.Br(),
+        dcc.Link(html.A('Introduction to Image Segmentation with K-Means clustering'), href="https://www.geeksforgeeks.org/image-segmentation-using-k-means-clustering/", style={'color': 'white', 'text-decoration': 'underline'}, target="_blank"),html.Br(),
+        dcc.Link(html.A('How Does PCA Dimension Reduction Work For Images'), href="https://analyticsindiamag.com/how-does-pca-dimension-reduction-work-for-images/", style={'color': 'white', 'text-decoration': 'underline'}, target="_blank"),
         html.Br(),
          ])])
