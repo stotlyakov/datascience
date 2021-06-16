@@ -1,0 +1,252 @@
+﻿ID,Issue,Description,Reported By:,Date and time Issue was reported to CE,Item Child Count,Environment,Date and time customer was unblocked,# of Customers Impacted,Status,Priority,Assigned To,Solution,Defect number,Root Cause Analysis,Service Impacted,Time taken to unblock the customer,Source of the Problem,Date and Time CE resolved the issue,App Created By,App Modified By,Content Type,Folder Child Count,Modified,Modified By,Time Taken CE to Resolve the Issue,Item Type,Path
+532,Microsoft Office 365 (CA) tenants being deleted because of missing MaintenanceSKU,"Office 365 CA customer tenants were deleted because the MaintenanceSKU (See MaintenanceSKU tab in attached spreadsheet, SKUs in row 22 and beyond were added on 5/22) were incorrect.  This came to our attention via a SNOW ticket (INC0869484) indicating customer could no longer access O365. Turned out his tenant was deleted in February (because maintenance sku was missing). After 90 days Microsoft removes the customer's data. So the customer's data could not be recovered.  Researching other Micorsoft Office 365 (CA) tenants, several were identified as having been online but were now deleted. In order to preserve customer data where possible, the customers identified with an ""A""  in the attached spreadsheet had their Subscription renewed using the CSP portal. The tenants marked with an ""x"" or ""G"" indicate the subscription was deleted more than 90 days ago and data cannot be recovered.  The tenants where data can be recovered will be reactivated.",Development,7/12/2018 0:00,0,Production,7/15/2018 0:00,12,Closed,P1,,Identify customers that have a SUSPENDED office 365 subscription. Mark the office subscription as active and undelete the CE tenant,,,Office 365 CA,,CE Metadata Issue,,,,Item,0,7/16/2018 14:11,"Sisk, Richard",,Item,sites/na/rd/ce/Lists/Live Site Issues
+531,Customer 4001001137 requires manual intervention,"Customer has two entitlements for Sage Fixed Assests, same entitlement different serial numbers. Deleted the expired entitlement and re-send the servicerequest.",Development,6/25/2018 14:30,0,Production,6/25/2018 14:00,1,Closed,P2,"Sisk, Richard;#983",Deleted the expired entitlement and re-send the servicerequest.,,,Sage Fixed Assets Online,,Upgrade Issues,6/25/2018 14:00,,,Item,0,6/25/2018 14:49,"Sisk, Richard",,Item,sites/na/rd/ce/Lists/Live Site Issues
+530,Customer 4001628966 Service Request requires manual intervention,Customer 4001628966 Service Request requires manual intervention  A TenantUpdate was attempted for Sage Timeslips Premium for this customer. Customer had two entitlements for User License with different serial numbers. One of the entitlements was expired.   Deleted the expired entitlement and resent the MIR service requests. All closed successfully,Development,6/25/2018 0:00,0,Production,6/25/2018 0:00,1,Closed,P2,"Sisk, Richard;#983",Deleted the expired entitlement and resent the MIR service requests. All closed successfully,,,Sage Timeslips eCenter,,Upgrade Issues,6/25/2018 0:00,,,Item,0,6/25/2018 13:24,"Sisk, Richard",,Item,sites/na/rd/ce/Lists/Live Site Issues
+529,Customer 4002923255 tenant is not created for Sage 100 ERP ,"An order came from back office, but CE did not create a Sage 100 ERP tenant as expected.",External Customer,4/19/2018 8:30,0,Production,4/19/2018 11:30,1,Closed,P1,"Li, Wei;#146","Manually created a tenant from SCP to unblock the customer, then research on the product SKU for this order.",,The product SKU in the order is not IN the CE system,Sage 100,,CE Metadata Issue,4/19/2018 9:30,,,Item,0,4/25/2018 9:07,"Li, Wei",,Item,sites/na/rd/ce/Lists/Live Site Issues
+528,Sage Business Center consent issue,"  When an Office 365 global admin login to Sage an app and perform consent which require the admin permission, we got an error “ it needs permission to access resources in your organization that only an admin can grant. Please ask an admin to grant permission to this app before you can use it.”, If we log in to Office 365 admin portal, we can verify the user is global admin user.  ",External Customer,4/20/2018 7:00,0,Production,4/21/2018 2:30,4,Closed,P1,"Li, Wei;#146","Opened a critical case with Microsoft with LSM,, case number 118042018044228. Microsoft engineering team found the breaking change, and rolled back the breaking change. That fixed the issue.",,"
+",Office 365 CA;#Office 365 FR;#Office 365 US;#Office 365 UK,,Azure Outages,4/20/2018 8:30,,,Item,0,4/23/2018 15:30,"Li, Wei",,Item,sites/na/rd/ce/Lists/Live Site Issues
+527,Office 365 Account that has gone suspended -  INC0732959 ,"Customer ID: 4000603839 
+Customer Name: In Touch Accounting  
+Customer has an Office 365 Account that has gone suspended in the Microsoft Cloud portal, and has been completely deleted from the Sage Cloud Portal. From our records the account should still be active, and we need to get the original tenant back in place as soon as possible, and back into the Sage Cloud Portal. We also would like information on why the account went straight from active to being deleted in the SCP instead of being suspended.",External Customer,3/5/2018 9:00,0,Production,3/5/2018 9:30,1,Closed,P1,"Totlyakov, Svetlin;#1554",Un-Delete the tenant and reactivate Office subscription,,,Office 365 UK,,Azure Outages,3/5/2018 9:30,,,Item,0,3/23/2018 14:55,"Totlyakov, Svetlin",,Item,sites/na/rd/ce/Lists/Live Site Issues
+526,"UK Account transfer failed for 64256790, 64256949 and 64254058",The account transfer from tenant was provisioned but not online yet.,Development,2/22/2018 7:30,0,Production,2/22/2018 8:30,3,Closed,P1,"Li, Wei;#146","Re-processed the ""transfer to"" order and then deleted the ""transfer from"" tenant in SCP.",,"
+",Office 365 UK,,Azure Outages,2/22/2018 8:30,,,Item,0,2/22/2018 8:48,"Li, Wei",,Item,sites/na/rd/ce/Lists/Live Site Issues
+525,"4007045975 - Invalid email, Requires Manual Intervention",The tenant creation service request failed during the validation checks. The customer contact has an invalid emailgpope@pearcebevillecom.,Development,2/20/2018 13:05,0,Production,2/20/2018 13:30,1,Closed,P1,"Li, Wei;#146",Corrected the email togpope@pearcebeville.com in SCP and resent the tenant creation service request.,,"
+",Office 365 US,,Back Office Data Missing or Incorrect,2/20/2018 13:30,,,Item,0,2/20/2018 16:15,"Li, Wei",,Item,sites/na/rd/ce/Lists/Live Site Issues
+524,Invalid email address for O365 US,angela.brown@newstpaul'hs.org email address is invalid,External Customer,2/15/2018 15:00,0,Production,2/16/2018 11:30,1,Closed,P2,"Manookian, Robert;#986",Customer needs to provide valid email address for service buyer,,"
+",Office 365 US,,Back Office Data Missing or Incorrect,2/15/2018 15:00,,,Item,0,4/2/2018 11:37,"Paxton, Monique",,Item,sites/na/rd/ce/Lists/Live Site Issues
+523,Duplicate payroll elements found in SLS data,"Customer: 4001283393
+When looking at the XML that is being downloaded from SLS, I found it has duplicate payroll elements.
+
+One for the new date and one with the expired, and the last one wins, so that is why the customer is expired....",External Customer,2/15/2018 11:00,0,Production,2/15/2018 11:30,1,Closed,P1,"Sisk, Richard;#983",Using SCP perform update on tenant.,"INC0716457, D-37058","
+",Sage 100,,CE Defect,2/15/2018 11:30,,,Item,0,2/16/2018 10:09,"Manookian, Robert",,Item,sites/na/rd/ce/Lists/Live Site Issues
+522,Customer Office 365 tenant deleted during sync,Customer's Office 365 tenant was deleted on 9/19/2017 during sync process.,External Customer,2/13/2018 8:30,0,Production,2/13/2018 14:30,1,Closed,P1,"Manookian, Robert;#986","The desired solution was to undelete the CE tenant and restore the Office 365 subscription. However, the Office 365 subscription was not listed in the CSP account, since the subscription was suspended over 90 days it was probably deleted.
+The solution was then to create a new CE Office tenant with a new Office 365 subscription.","INC0712293, D-37028","
+",Office 365 CA,,CE Defect,2/13/2018 10:00,,,Item,0,2/14/2018 10:45,"Manookian, Robert",,Item,sites/na/rd/ce/Lists/Live Site Issues
+521,Cloud Flare protection to CE SignOn endpoint suddenly prevented traffic to reach service,"Cloud Flare protection to CE SignOn endpoint suddenly prevented traffic to reach service.  Api calls to CE authorization service returned 520 error.  Those services that uses our UM Client library, their users were not able to log in.",Development,1/10/2018 16:45,0,Production,1/11/2018 2:00,75,Closed,P1,"Tan-Torres, Gerard;#984",Remove the CESignOn endpoint from Cloud Flare protection.,B-78549 ,"  Email from CF identifies the root cause.
+==========
+Hi Ricardo,  
+Thanks for getting back. We did have an incident yesterday that caused a number of customers to experience 520 errors. This issue was due to SSL negotiation failures between Cloudflare and customer's origin servers. Customers using Cloudflare Origin CA and Microsoft IIS servers were most heavily impacted.  
+My understanding is that the issue has been addressed and we are no longer seeing errors for customers.  
+Please let us know if you have any questions or concerns.  
+Best regards,  
+Eoin  
+Cloudflare | Support Engineer
+ Join theCloudflare Community  ",All Services Using CE,,Unspecified,1/11/2018 2:00,,,Item,0,1/17/2018 10:01,"Tan-Torres, Gerard",,Item,sites/na/rd/ce/Lists/Live Site Issues
+520,63823004 - Xanadu Trade Services. Tenant needs to be reinstated,"
+INC0674090
+  
+Logged By: Mark.Carlisle@sage.com
+ Region: Sage UK
+ Initial Urgency: 2 - High
+ Category: Application/Service Issue - Outage
+ Customer Impacting: true  
+Ticket Summary:
+ 63823004 - Xanadu Trade Services Ltd: Tenant Reinstatement  
+Ticket Description:
+ TenantId
+ --------
+ 052900cd-edb8-4354-8aa5-6abd2f6a0bad
+
+ The above tenant is not showing in the Sage Cloud Portal and the tenant has become un-licensed as a result. It is unknown as to how this has happened but the customer does have 3 registrations on inTouch, two of which are showing as cancelled, screenshot attached. Looking at notes on the customer account this tenant was reinstated previously on 09/11/17. I have confirmed with our credit control team they are paying for 5 seats with 1 free seat (6 seats in total).
+
+ Could this tenant please be reinstated. If possible could you advise how this happened.  ",External Customer,1/9/2018 14:48,0,Production,1/10/2018 9:29,1,Closed,P1,"Vega, Jeff;#985","
+3 changes were made to address this issue:
+* How value impacts entitlement when they are combined;
+* How entitlement are combined by date overlap;
+* How the duplicates are treatedSystem
+
+2018-01-14 09:02:19 PM
+
+Incident automatically closed after 3 days in the Resolved state.",D-36739,"
+
+3 changes were made to address this issue:
+* How value impacts entitlement when they are combined;
+* How entitlement are combined by date overlap;
+* How the duplicates are treated",Office 365 UK,,CE Defect,1/9/2018 15:00,,,Item,0,3/23/2018 14:46,"Totlyakov, Svetlin",,Item,sites/na/rd/ce/Lists/Live Site Issues
+519,O365 US - Customer address failed MS validation,"  Error] Provision Office 365 customer/tenant was completed with an error for Sage tenant 464dd713-9ef1-4e5b-9791-c9d8d1ed2251 in US with contact address in US. [CSPService.CreateMSCustomerOrder]  Diagnostic Info:
+ (Exception) --> Provision Microsoft Subscription was unsuccessful for Sage tenant 464dd713-9ef1-4e5b-9791-c9d8d1ed2251
+ Exception Source: SageNA.CE.Office365.Services
+ Exception Type: System.Exception
+
+",Development,1/9/2018 12:04,0,Production,1/9/2018 13:32,2,Closed,P2,"Li, Wei;#146","Contact address had Puerto Rico on the State field. MS passed the address validation but during subscription provisioning, it failed. Wei was able to update the Bill To address on the Partner Center portal. Then resend the SR. All SRs are closed.",D-36731,"
+",Office 365 US,,Back Office Data Missing or Incorrect,1/9/2018 13:32,,,Item,0,1/9/2018 13:35,"Tan-Torres, Gerard",,Item,sites/na/rd/ce/Lists/Live Site Issues
+518,O365 US - Customer address failed MS validation,"  Use Case: Close Service Request  
+Role=""SageNA.CE.Common.BackgroundTasks"" Message=""[2018-01-09T15:22:07.8804560Z][Error] [CustomerId:4001713571] ServiceRequest [892f570d-d091-4320-89fe-ef40b3f87bf7] related to product 'Microsoft Office 365 (US)' has unaccepted closing status 'RejectRecycle'. [ServiceRequestSvc.ProcessForClose]  ",Development,1/9/2018 7:24,0,Production,1/9/2018 10:55,2,Closed,P2,"Li, Wei;#146","  Contact address had Puerto Rico on the State field.  MS passed the address validation but during subscription provisioning, it failed.  Wei was able to update the Bill To address on the Partner Center portal.  Then resend the SR.  All SRs are closed.  
+
+  ",D-36731,"
+",Office 365 US,,Back Office Data Missing or Incorrect,1/9/2018 10:55,,,Item,0,1/9/2018 13:36,"Tan-Torres, Gerard",,Item,sites/na/rd/ce/Lists/Live Site Issues
+517,Customer entitlement missng contract effective dates,"  Role=""SageNA.CE.Common.BackgroundTasks"" Message=""[2018-01-09T21:01:24.5572213Z][Warning] [CustomerID:4002949071,NorthAmerica] Entitlement for Module [Inventory Advisor Monthly,8b75f296-1ce1-4561-a970-5a9132550a29] on Tenant [bce7ac6b-8d11-4415-93a7-478b81a34fea] ends on [2018-01-09], has not been reconciled with entitlement from the backOffice, and is past due for Contract Effective Dates. An inspection of the customer's record may find a discrepancy for M&S Contracts that apply to Service 'Sage Inventory Advisor' [2 occurrence(s)]  ",Development,1/9/2018 13:04,0,Production,1/9/2018 13:15,1,Closed,P2,"Tan-Torres, Gerard;#984",Found the log entry with the customer’s contract effective dates for SIA.  Updated manually in SCP.  ,,"
+",Sage Inventory Advisor,,Back Office Data Missing or Incorrect,1/9/2018 13:15,,,Item,0,1/9/2018 13:25,"Tan-Torres, Gerard",,Item,sites/na/rd/ce/Lists/Live Site Issues
+516,O365 200c order was placed against 50c,"From: Frazer2, Wayne
+ Sent: Monday, January 8, 2018 6:11:48 AM
+ To: Hall, David; Sisk, Richard; Anderson, Mel
+ Cc: Kirkup, Jo; Pryer, Richard
+ Subject: RE: Sage 200c Standard & Office 365 (3rd party) 
+    Hi All 
+  Today is day 1 of the 200c 365 launch and it appears we have an agent place an order for the 50c 365 Existing Agreement in error.
+  The customer is a 200c Standard customer and needed the 365AAD Existing Agreement.
+  I have cancelled and replaced the 1st subscription with the correct plan:  365 Customer Exiting Agreement with AAD (see screens below)
+  @Sisk, Richard – Could you please check the subscription details on the orders below and confirm we are able to complete the onboarding process for the 365AAD (A-S00553257)
+
+",External Customer,1/8/2018 9:14,0,Production,1/9/2018 15:42,,Closed,P2,"Vega, Jeff;#985","  From: Vega, Jeff
+ Sent: Tuesday, January 9, 2018 3:42 AM
+ To: Anderson, Mel <Mel.Anderson@sage.com>
+ Cc: Kirkup, Jo <joanne.kirkup@sage.com>; Sisk, Richard <Richard.Sisk@sage.com>; Frazer2, Wayne <Wayne.Frazer2@sage.com>; Hall, David <David.Hall2@sage.com>; Tan-Torres, Gerard <Gerard.Tan-Torres@sage.com>; Pryer, Richard <Richard.Pryer@sage.com>
+ Subject: Re: Sage 200c Standard & Office 365 (3rd party)  
+   
+Yes, the Sage 50c subscription can be closed and deprovisioned immediately by closing the tenant.  I will do that now.  ",,Sales Ops entered order incorrectly.,Office 365 UK,,Sales Ops order entry,1/8/2018 15:25,,,Item,0,1/9/2018 12:17,"Tan-Torres, Gerard",,Item,sites/na/rd/ce/Lists/Live Site Issues
+515,Error finding commerce account:Commerce account not found,"Event Details:
+ Error detected from WAD log.
+Role=""SageNA.CE.Office365.WorkerRole"" Message=""[2017-12-30T18:41:38.4614375Z][Error] Unable to update Office 365 customer/tenant for tenant db1fc7d8-4ec1-4b23-b7ce-5068707a9acf, exception message: 1. [CSPService.UpdateMSCustomerOrder]
+Diagnostic Info:
+ (PartnerException) --> Error finding commerce account:Commerce account not found
+ Exception Source: Microsoft.Store.PartnerCenter
+ Exception Type: Microsoft.Store.PartnerCenter.Exceptions.PartnerException
+
+ ---- Stack Trace ----
+ Microsoft.Store.PartnerCenter.PartnerService.SynchronousExecute(Func`1 operation) in Microsoft.Store.PartnerCenter.dll
+ SageNA.CE.Office365.Services.CSPService.UpdateMSOrder(String customerId, String sageModuleId, Int32 quantity, String tenantId) in SageNA.CE.Office365.Services.dll,file: CSPService.cs,line: 1647
+ SageNA.CE.Office365.Services.CSPService.UpdateEntitlement(Tenant tenant, Office365Subscription officeSub) in SageNA.CE.Office365.Services.dll,file: CSPService.cs,line: 3603
+ SageNA.CE.Office365.Services.CSPService.UpdateMSCustomerOrder(Guid tenantId) in SageNA.CE.Office365.Services.dll,file: CSPService.cs,line: 0698",Development,12/30/2017 18:44,0,Production,12/30/2017 20:27,,Closed,P1,"Pack, Albert;#11377","
+",D-36648,"
+",Office 365 CA,,Azure Outages,12/30/2017 20:27,,,Item,0,4/2/2018 11:31,"Paxton, Monique",,Item,sites/na/rd/ce/Lists/Live Site Issues
+514,Activate suspended tenant for Office Sage 50 US - INC0660437 - 4001542273,"Ticket Summary:
+ Tenant suspended now needs to be active 4001542273
+Ticket Description:
+ Tenant with subscription ID 4E490253-7C1B-4A9D-99EB-67DF525A9EB6 was suspended to add connector SKU to fusion acct, a misunderstanding lead to connector sku needing to be removed and original sku re-add at no charge. this action created a second tenant for the client with subscription ID 0BAC418C-67FB-4807-89AF-659E6DFB21B1. Is it possible to link these subscription IDs as the client has already migrated his domain and created users in the first subscription.",External Customer,12/21/2017 9:17,0,Production,12/21/2017 10:30,1,Fixed,P1,"Totlyakov, Svetlin;#1554","Undelete the tenant with SQL script and hot fix from devops. However, we need to ensure that the correct entitlements are in place. This was not the case, there were two entitlements, Premium and Resell. So, after the script runs, the wrong entitlement has to removed from SCP.",,The customer was created incorrectly. So when undeleting a tenant we have to ensure that the tenant has to correct entitlements.,Office 365 US,,Back Office Data Missing or Incorrect,12/21/2017 10:30,,,Item,0,1/2/2018 16:31,"Totlyakov, Svetlin",,Item,sites/na/rd/ce/Lists/Live Site Issues
+513,Failed to LogUserAccess - Exception Message:'Invalid TenantID [UserAccessLogSvc.Create]' - Calling LogUserAccess,"Event Details:
+ Error detected from WAD log.
+Role=""CEDataWebServiceRole"" Message=""[2017-12-27T08:02:05.1017525Z][Error] Failed to LogUserAccess - Exception Message:'Invalid TenantID 84149c71-aef4-42b9-92fd-5ae8ebff11d9 [UserAccessLogSvc.Create]' - Calling LogUserAccess. [2 occurrence(s)]
+Diagnostic Info:
+ (UnrecoverableException) --> Invalid TenantID 84149c71-aef4-42b9-92fd-5ae8ebff11d9 [UserAccessLogSvc.Create]
+ Exception Source: SageNA.CE.Service
+ Exception Type: SageNA.CE.Service.Exceptions.UnrecoverableException
+
+ ---- Stack Trace ----
+ SageNA.CE.Service.UserAccessLogSvc.Create(UserAccessLog entity) in SageNA.CE.Service.dll
+ CEDataService.<>c__DisplayClass51_0.<LogUserTenantSignIn>b__0() in CEDataService.dll
+ Microsoft.Practices.TransientFaultHandling.<>c__DisplayClass1.<ExecuteAction>b__0() in Microsoft.Practices.TransientFaultHandling.Core.dll
+ Microsoft.Practices.TransientFaultHandling.RetryPolicy.ExecuteAction(Func`1 func) in Microsoft.Practices.TransientFaultHandling.Core.dll
+ CEDataService.CEUMRepository.LogUserTenantSignIn(Guid productUserId, Guid appId, Guid tenantId, UserAccessOriginator originator, String logDescription) in CEDataService.dll
+ CEDataService.CEUMRepository.LogUserAccess(PersonAccessInfo pai, Guid appId, UserAccessOriginator originator, String requestLogDescription) in CEDataService.dll",Development,12/27/2017 8:45,0,Production,12/27/2017 9:10,0,Closed,P2,"Pack, Albert;#11377",Possible defect Caused from the issue with the TenantID and Customer not properly created. The TenantID was floating,,"    Looks like the “Invalid TenantID” FK error against the UserAccessLog is a test Validation Svc tenant that was deleted by the scheduled clean up sql script executed by TC.  I found a reference to the TenantID in the clean up log (TC Artifact).  OK to ignore.  
+   
+Gerard  
+",Sage Cloud Portal,,Azure Outages,12/27/2017 9:10,,,Item,0,1/9/2018 13:27,"Tan-Torres, Gerard",,Item,sites/na/rd/ce/Lists/Live Site Issues
+512,Account has the active SKU in fusion but no tenant in SCP - INC0659512 - 4001613691,"Ticket Summary:
+ show that the account has the active SKU in fusion but no tenant in SCP for A-1 EQUIPMENT SALES & SERVICE, INC #4001613691
+Ticket Description:
+ show that the account has the active SKU in fusion but no tenant in SCP for A-1 EQUIPMENT SALES & SERVICE, INC #4001613691 Johm Doylea1equip@comcast.net",External Customer,12/20/2017 15:45,0,Production,12/20/2017 17:00,1,Fixed,P1,"Totlyakov, Svetlin;#1554",Worked with sales ops to create the customer in SCP. Then we resync,,"Searching for the order and customer in the logs we are seeing the sync attempt but not the initial order payload. Therefore, it turns out that sales ops are entering the order incorrectly which causes the issue of no customer or order created on the CE side. The ticket will be submitted to Sales Ops to revisit the process. ",Office 365 US,,Back Office Data Missing or Incorrect,12/20/2017 16:30,,,Item,0,1/2/2018 16:11,"Totlyakov, Svetlin",,Item,sites/na/rd/ce/Lists/Live Site Issues
+511,A tenant has been deleted from the Sage Cloud Portal in error - INC0658747 - 63346766 ,"Ticket Summary:
+ 63346766 - Simply Bright (Aylesford) Limited: Tenant Reinstatement
+Ticket Description:
+ A tenant has been deleted from the Sage Cloud Portal in error.
+
+ Customer has migrated domain and has no access to emails for any users on this tenant, therefore the business impact is very high.
+
+ Please could you reinstate this as soon as possible.
+
+ Domain: SimplyBrightAylesfordLimi.onmicrosoft.com
+ Tenant ID: 633691f0-2c20-47d1-b9b9-87d71648ad6a
+ User ID: 3530a947-f2a9-465d-b07d-fb4a54853991
+Note that the MS tenant id is given not the CE tenant id",DevOps,12/21/2017 3:40,0,Production,12/21/2017 4:00,1,Fixed,P1,"Totlyakov, Svetlin;#1554",We have to un-delete the tenant with SQL script and hot fix from LSM. Please see the script attached. ,,n/a,Office 365 UK,,User Error,1/21/2018 4:00,,,Item,0,1/2/2018 15:34,"Totlyakov, Svetlin",,Item,sites/na/rd/ce/Lists/Live Site Issues
+510,"Transaction complete, but account not created in cloud portal - INC0662129 and INC0662161","Could I get a reprocess transaction on BPID 4001112206? Order 1004470623 is complete, but the account has not been created in the cloud portal.
+
+
+Could I get a reprocess order on BPID 4002016905. The transaction is showing in Fusion as complete and Office 365 is showing in the Products list, but is not showing in the cloud portal.",External Customer,12/27/2017 8:30,0,Production,12/27/2017 9:00,2,Closed,P1,"Pack, Albert;#11377","Contact regional sales team to re add the customer contact information again. Issue was caused when improper data was entered to the system for a period of time before the hotfix. Rather than rejecting, it accepted and went through.",,"
+",Office 365 US,,CE Defect,12/27/2017 9:10,,,Item,0,1/2/2018 15:33,"Pack, Albert",,Item,sites/na/rd/ce/Lists/Live Site Issues
+509,Suspended tenant for Office CA 50c - INC0656204,"admin@Sage50ca2.onmicrosoft.com - this production account was suspended on schedule last Friday, Dec. 15. It is part of a joint investigation between Sage and Microsoft for some troubling Microsoft GraphAPI behaviour we have noticed during Sage 50 Canada's testing of Office365 User Roles that was just deployed for Sage 50 Canada customers.
+
+ Please ""unsuspend"" this account and advise once done so that our troubleshooting this tenant can continue.
+
+ Thanks, Joel. x353648",Development,12/18/2017 10:20,0,Production,12/18/2017 2:48,1,Fixed,P1,"Totlyakov, Svetlin;#1554",The solution was to undelete/unsuspend the tenant using SQL and creating hot fix with LSM - AmericasScript is attached,,n/a,Office 365 CA,,User Error,12/18/2017 11:00,,,Item,0,1/2/2018 15:10,"Totlyakov, Svetlin",,Item,sites/na/rd/ce/Lists/Live Site Issues
+508,Customer is missing registration email - INC0659012 - 40020599 ,"Hello, The client 40020599 (whose email address is: contact@flameo-securite.fr) has subscribed on 22/11/2017 from SAGE (France) an Office 365 Business Premium contract. But this customer is still not receiving his activation email and his account is still not present on the Sage Cloud Portal.  Could you help us solve this problem, please?  thank you in advance  Regards, Manuel ROBERT",External Customer,12/22/2017 8:00,0,Production,12/22/2017 8:30,1,Fixed,P1,"Totlyakov, Svetlin;#1554","Research showed that the the entitlement was entered with starting date latter then the date for the order. Therefore, reprocessing the order solved the problem.",,Sales entered the wrong information about the entitlement start date.,Office 365 US,,Back Office Data Missing or Incorrect,12/22/2017 8:30,,,Item,0,1/2/2018 14:49,"Totlyakov, Svetlin",,Item,sites/na/rd/ce/Lists/Live Site Issues
+507,Data Service Deployment not processing service bus queue messages,"Orders not being processed. Looks like they are ""stuck"" on the UK order queue.
+",External Customer,12/4/2017 8:00,0,Production,12/4/2017 14:00,80,Closed,P1,"Vega, Jeff;#985;#Tan-Torres, Gerard;#984","Rebooted the service several times, still no orders processed. Eventually the UK order queue was deleted, then the service background worker was re-started and orders started to process. The orders that were in the queue when deleted were re-processed using the re-process feature with SCP.",INC0640407,"  CE believes its service bus library may have issues managing the tasks that subscribe to the Azure queues which can block receipt of the queue messages and could potentially cause a memory leak.  Mitigated by reducing the configuration value that controls the number of active queue subscription tasks from 10 down to 1.  CE will immediately work on a new simplified version designed not to have these issues.  
+",Office 365 DE;#Office 365 ES;#Office 365 FR;#Office 365 UK,,Azure Outages,12/4/2017 14:00,,,Item,0,2/5/2018 10:31,"Paxton, Monique",,Item,sites/na/rd/ce/Lists/Live Site Issues
+506,"Order didn't process, tenant was not created for O365FR","Customer ID: 10884440
+
+Customer purchased O365 FR but didn't receive his activation email and the account was not present on Sage Cloud Portal.
+",External Customer,11/14/2017 9:00,0,Production,11/14/2017 9:30,1,Fixed,P1,"Ha, Min;#6912","Walked through this with Bob, checked the database to see if there was a tenant associated with the customer number and there wasn't. Checked Sumo and saw the customer ID generated 0 service request chains so we went back to Sage Cloud Portal and reprocessed the order. A tenant was created and the service requests closed successfully.
+","INC0619240, D-36315",,Office 365 FR,,Unspecified,11/14/2017 9:30,,,Item,0,11/14/2017 7:04,"Ha, Min",,Item,sites/na/rd/ce/Lists/Live Site Issues
+505,Unable to provision Office 365 subscription,"Customer: 62203977
+ This customer has an Office 365 subscription from another reseller, i.e. they did not purchase the Office 365 subscription from Sage. In this case they need to grant Sage access to their Office 365 subscription. This access is granted during the on-boarding process. It looks like they failed to complete the necessary steps during the on-boarding process to do that.",External Customer,11/9/2017 5:00,0,Production,11/17/2017 21:00,1,Closed,P2,"Walker, Steven;#6070","Created SNOW ticket assigned to Steven Walker.
+stem
+Additional comments
+2017-11-17 09:00:45 PM
+
+Incident automatically closed after 3 days in the Resolved state.",INC0617501,"
+",Office 365 UK,,User Error,11/9/2017 17:30,,,Item,0,2/5/2018 10:30,"Paxton, Monique",,Item,sites/na/rd/ce/Lists/Live Site Issues
+504,Office 365 is now showing as expired and he can’t use his emails,"Customer: 63823004 
+
+  They have had a couple of registrations for 0365, 2 of which have expired and 1 of which shows 6 business premium licences (all of which is correct)
+  As such, his O365 is now showing as expired and he can’t use his emails.. it’s also now showing as 1 licence. Is there anything you can do from your side to reinstate this?",External Customer,11/9/2017 8:00,0,Production,11/9/2017 8:00,1,Closed,P1,"Sisk, Richard;#983","Rick using the CSP account un-suspended the Office 365 subscription. It was noted that CE did not issue any service requests to suspend the customers Office 365 subscription, i.e. no TenantClose was issued.",,"
+",Office 365 UK,,Unspecified,11/9/2017 8:00,,,Item,0,11/9/2017 19:07,"Manookian, Robert",,Item,sites/na/rd/ce/Lists/Live Site Issues
+503,Sage Cloud Portal - Unable to Setup Sage Mobile Projects,Sales/Marketing folks for CRE notified CE their AAD tenants/subscriptions where no longer available. These CE tenants and their corresponding AAD subscriptions are deleted on a regular basis as to not have the AAD subscription costs charged to Sage.,External Customer,11/6/2017 16:30,0,Production,11/7/2017 9:00,1,Closed,P2,"Manookian, Robert;#986",CE recreated the AAD tenants in production. These tenants where then on-boarded successfully.,INC0613140 ,"
+",Unspecified,,Unspecified,11/7/2017 9:00,,,Item,0,11/9/2017 19:01,"Manookian, Robert",,Item,sites/na/rd/ce/Lists/Live Site Issues
+502,Unable to process backoffice data due to invalid data field,"Customer: 4001666449
+There is an invalid date in the End Date field(0000-00-00) for Contract 7000255505.",Development,11/7/2017 15:00,0,Production,11/7/2017 15:30,1,Closed,P2,"Manookian, Robert;#986",Create SNOW ticket for Stephen Montgomery to fix on the Fusion side.,INC0614636,"
+",Sage Fixed Assets Online,,Back Office Data Missing or Incorrect,11/7/2017 15:30,,,Item,0,11/9/2017 18:53,"Manookian, Robert",,Item,sites/na/rd/ce/Lists/Live Site Issues
+501,Unable to provision Office 365 subscription,"Customer: 4000264721
+Customer did not complete Office 365 reseller agreement. The CE log indicates Sage cannot access the customer's Office 365 subscription.",External Customer,11/7/2017 11:30,0,Production,11/17/2017 21:00,1,Closed,P2,"Silcox, Casey;#1217","Create SNOW ticket for Casey Silcox to help customer complete reseller authorization.
+System
+
+2017-11-17 09:00:37 PM
+
+Incident automatically closed after 3 days in the Resolved state.",INC0614452,"
+",Office 365 CA,,User Error,11/7/2017 11:30,,,Item,0,2/5/2018 9:59,"Paxton, Monique",,Item,sites/na/rd/ce/Lists/Live Site Issues
+500,Support Phone Incorrect for Customers in 365 Admin Portal,"For our customers 365 tenants in the US and Canada, the support phone number is incorrect. It appears that information comes from our partner portals for each region. The correct phone number for use under Support Info is 866-996-7243 (not 888-996-7243). Can we please adjust for both regions.
+This phone number is actually on the Office 365 reseller authorization page. This is a Microsoft page used for authorizing Sage to access the customer's Office 365 subscription.",External Customer,11/7/2017 10:30,0,Production,11/7/2017 10:30,,Closed,P2,"Li, Wei;#146",Wei updated the CSP account data for the specified regions.,INC0614329,"
+",Office 365 CA,,Azure Outages,11/7/2017 11:30,,,Item,0,11/9/2017 18:16,"Manookian, Robert",,Item,sites/na/rd/ce/Lists/Live Site Issues
+499,"When existing 100c materials were made inactive, the ZD ibase component was also changed to inactive","Customer: 4006661010
+When existing 100c materials were made inactive, the ZD ibase component was also changed to inactive. This caused issue with order process as order was creating new ZD ibase and product registration did not expect new ZD ibase leading to reg errors. I corrected the ZD ibase component 82232265 to active and resaved order 1003865992 which the action completed successfully. Going forward the Ibase update order for ibase update can be used to avoid these errors.",External Customer,11/6/2017 9:00,0,Production,11/6/2017 11:00,1,Closed,P2,"Manookian, Robert;#986",Once Sales Ops corrected the issue from their side CE reprocessed the order using SCP to fix the issue on the CE side.,INC0612072,"
+",Sage 100,,Back Office Data Missing or Incorrect,11/6/2017 9:30,,,Item,0,11/9/2017 18:10,"Manookian, Robert",,Item,sites/na/rd/ce/Lists/Live Site Issues
+498,Customer tenant not in CE,"  Customer: 4002945545 
+Customer owns 100C.  Customer is not on CE Server. Now getting “Your Sage 100 subscription has expired. You can continue using the software for 45 days. Please contact Sage before xx/xx/xxxx to renew your subscription”. Customer is currently running within Grace Period.  ",External Customer,11/6/2017 11:00,0,Production,11/6/2017 11:00,1,Closed,P2,"Manookian, Robert;#986",Have Sales Ops create the Sage 100c CE tenant using the SCP. Once this is done SLS can be updated using SCP Send Update feature.,,"The issue look like this customer was never imported when the Sage 100c product went live. The customer order Sage 100c on 1/26/2016. However, the first order CE received for this customer was on 7/22/2016.",Sage 100,,Unspecified,11/8/2017 13:00,,,Item,0,11/9/2017 18:09,"Manookian, Robert",,Item,sites/na/rd/ce/Lists/Live Site Issues
+497,Azure service queue mssesage count to high,"Msg from LSMWe are getting an alert from sumo : CE serviceBus for data service queue length too long
+alert - CE service bus for data service queue length too long. Please check CE data service and service bus.  If service bus queue length remains high for a prolonged time, please contact CE on call person for assistance.
+ 
+Its been like this for maybe 6 hours and the number is increasing, this is the latest figures from Sumo, including the queue name:",DevOps,11/6/2017 3:30,0,Production,11/6/2017 3:01,0,Closed,P2,"Totlyakov, Svetlin;#1554","The solution was to add another instance to the worker role. The messages were processed by west but were stuck in east. Rebooting the worker role for that region did not help in this case. In previous instance of this issue, this aproach was one of the steps to help the messages get processed.",,The reason is still unknown. ,All Services Using CE,,Azure Outages,11/6/2017 8:00,,,Item,0,11/7/2017 15:01,"Totlyakov, Svetlin",,Item,sites/na/rd/ce/Lists/Live Site Issues
+496,Customer 4006661010 has duplicate 100c subscriptions,"See the following email extract:
+Apparently, when you deactivated IBASE on 2/1 before entering the new subscription, you deactivated the entire KMAT, instead of just the individual product lines.
+ 
+Therefore, the new IBASE order entered on 2/1 had registration errors, and could not re-populate the new products.
+ 
+Tech team is fixing the data and will re-save the 2/1 IBASE order to populate properly.  Customer should receive activation codes at that time.  And CE should be triggered.
+ 
+I will confirm when this is complete.",External Customer,11/6/2017 8:13,0,Production,11/6/2017 8:38,1,Closed,P1,"Totlyakov, Svetlin;#1554","After the IBASE was updated, CE re-processed the order and the tenant was created with the correct entitlements. Please see the attached email chain for more info.",,,Sage 100,,Back Office Data Missing or Incorrect,11/6/2017 8:38,,,Item,0,11/7/2017 14:47,"Totlyakov, Svetlin",,Item,sites/na/rd/ce/Lists/Live Site Issues
+495,Cloud Enablement server does not agree with Fusion on the Payroll Expiration date ,"  From: Raby, Linda
+ Sent: Wednesday, October 04, 2017 16:01
+ To: Vega, Jeff <Jeff.Vega@sage.com>; Tan-Torres, Gerard <Gerard.Tan-Torres@sage.com>
+ Subject: P1URGENT PR Down - Account 4002932682 Plasco Designs of Arkansas
+ Importance: High  
+   
+   
+Jeff and Gerard,  
+   
+I think I have another one of these as the Fusion date is 9/29/2018 for the Payroll subscription but the CE says 9/29/2017.  
+   
+I’m really sorry but I don’t really understand the SKU and metadata relation.   Is there something I can do from support end to fix these?  
+   
+Thank you,  
+Linda  ",External Customer,10/4/2017 14:01,0,Production,10/4/2017 14:10,1,Closed,P1,"Tan-Torres, Gerard;#984",Perform a customer sync,D-35881,"We did not receive an IBASE updated notification when the contract posted to the IBASE, whenever that was. 
+This reversion to a date based on an expired contract is an existing defect D-35881.  The defect should correct the behavior to allow the entitlement to be valid up to 10 days grace. 
+
+Looking at the current IBASE data, if Linda had performed a ""Synchronize Customer"" operation in SCP it should have corrected itself, since IBASE is now up to date.",Managed Payroll,,CE Defect,10/4/2017 14:10,,,Item,0,10/5/2017 12:04,"Tan-Torres, Gerard",,Item,sites/na/rd/ce/Lists/Live Site Issues
+494,Cloud Enablement server does not agree with Fusion on the Payroll Expiration date ,"  From: Raby, Linda
+ Sent: Wednesday, October 04, 2017 11:18 AM
+ To: Tan-Torres, Gerard <Gerard.Tan-Torres@sage.com>
+ Cc: Vega, Jeff <Jeff.Vega@sage.com>
+ Subject: P1URGENT PR Down - Account 4002631593 Indian Pueblo cultural Center
+ Importance: High  
+   
+   
+Gerard,  
+   
+It appears that the Cloud Enablement server does not agree with Fusion on the Payroll Expiration date for the above customer.  
+Fusion indicates 9/27/2018 but in the CE it says 9/27/2017.   Does it just need to be Synched?  We have a customer LOCKED OUT of payroll and they are trying to run payroll now.   
+   
+Thank you,  
+Linda  ",External Customer,10/4/2017 11:18,0,Production,10/4/2017 11:30,1,Closed,P1,"Tan-Torres, Gerard;#984",Updated Entitlement with correct end date per Linda.,D-35881,"  We did not receive an IBASE updated notification when the contract posted to the IBASE, whenever that was.  
+This reversion to a date based on an expired contract is an existing defect D-35881.  The defect should correct the behavior to allow the entitlement to be valid up to 10 days grace.  
+   
+Looking at the current IBASE data, if Linda had performed a “Synchronize Customer” operation in SCP it should have corrected itself, since IBASE is now up to date.  ",Managed Payroll,,CE Defect,10/4/2017 11:30,,,Item,0,10/5/2017 11:58,"Tan-Torres, Gerard",,Item,sites/na/rd/ce/Lists/Live Site Issues
