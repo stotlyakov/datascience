@@ -87,6 +87,16 @@ layout = html.Div([dbc.Container([
                                                         className="mt-3")], justify="center")],
                              body=True, color="dark", outline=True)
                     , width=4, className="mb-4"),
+              dbc.Col(dbc.Card(children=[html.H3(children='HW 14 - NLP',
+                                               className="text-center"),
+                                       dbc.Row([dbc.Col(dbc.Button("GitHub", href="https://github.com/stotlyakov/datascience/blob/main/apps/hw14.py",target="_blank",
+                                                                   color="light"),
+                                                        className="mt-3"),
+                                                 dbc.Col(dbc.Button("HW 14", id="loading-button-12-13", href="/hw14",
+                                                                   color="light"),
+                                                        className="mt-3")], justify="center")],
+                             body=True, color="dark", outline=True)
+                    , width=4, className="mb-4"),
              ], className="mb-5"),])])
 
 @app.callback(Output("loading-output", "children"), [Input("loading-button-12-13", "n_clicks")]
