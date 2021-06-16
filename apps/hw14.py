@@ -27,7 +27,7 @@ nltk.download('punkt')
 
 cwd = os.getcwd()
 path = cwd + '/data/Live Site Issues small.csv'
-liveSiteAll = pd.read_excel(path)
+liveSiteAll = pd.read_csv(path)
 liveSiteAll.drop(['App Created By','App Modified By','Content Type','Modified','Modified By','Item Type','Item Type','Defect number','Assigned To','Status','Time Taken CE to Resolve the Issue','Folder Child Count','Path','Item Child Count','Time taken to unblock the customer'], inplace=True, axis=1)
 
 liveSiteAllDescSol = liveSiteAll['Issue']
