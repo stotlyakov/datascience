@@ -35,6 +35,9 @@
     <Compile Include="apps\hw12_13.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="apps\hw14.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="apps\hw1to6.py" />
     <Compile Include="apps\home.py" />
     <Compile Include="apps\hw7.py">
