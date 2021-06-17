@@ -23,6 +23,7 @@
     <Content Include="assets\ds3.png" />
     <Content Include="data\int_rates_testing.csv" />
     <Content Include="data\int_rates_training.csv" />
+    <Content Include="data\Live Site Issues.csv" />
     <Content Include="data\sacramento_real_estate_transactions.csv" />
     <Content Include="requirements.txt" />
     <Content Include="runtime.txt" />
