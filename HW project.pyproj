@@ -33,6 +33,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="app.py" />
+    <Compile Include="apps\final.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="apps\hw12_13.py">
       <SubType>Code</SubType>
     </Compile>
@@ -47,14 +50,21 @@
     <Compile Include="apps\hw8.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="apps\singapore.py" />
     <Compile Include="apps\__init__.py" />
     <Compile Include="index.py" />
+    <Compile Include="nlp\nlpModelProvider.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="nlp\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="apps" />
     <Folder Include="assets" />
     <Folder Include="data\" />
+    <Folder Include="models\" />
+    <Folder Include="nlp\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
 </Project>

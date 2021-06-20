@@ -11,7 +11,7 @@ Customer has an Office 365 Account that has gone suspended in the Microsoft Clou
 526,"UK Account transfer failed for 64256790, 64256949 and 64254058",The account transfer from tenant was provisioned but not online yet.,Development,2/22/2018 7:30,0,Production,2/22/2018 8:30,3,Closed,P1,"Li, Doe;#146","Re-processed the ""transfer to"" order and then deleted the ""transfer from"" tenant in SCP.",,"
 ",Office 365 UK,,Azure Outages,2/22/2018 8:30,,,Item,0,2/22/2018 8:48,"Li, Doe",,Item,sites/na/rd/ce/Lists/Live Site Issues
 525,"4007045975 - Invalid email, Requires Manual Intervention",The tenant creation service request failed during the validation checks. The customer contact has an invalid example@gmail.com,2/20/2018 13:05,0,Production,2/20/2018 13:30,1,Closed,P1,"Li, Doe;#146",Corrected the email example@gmail.com and resent the tenant creation service request.,,"
-",Office 365 US,,Back Office Data Missing or Incorrect,2/20/2018 13:30,,,Item,0,2/20/2018 16:15,"Li, Doe",,Item,sites/na/rd/ce/Lists/Live Site Issues
+",Office 365 US,,Back Office Data Missing or Incorrect,2/20/2018 13:30,,,Item,0,2/20/2018 16:15,"Li, Doe",,Item,sites/na/rd/ce/Lists/Live Site Issues,
 524,Invalid email address for O365 US,example@gmail.com address is invalid,External Customer,2/15/2018 15:00,0,Production,2/16/2018 11:30,1,Closed,P2,"Doe, Doe;#986",Customer needs to provide valid email address for service buyer,,"
 ",Office 365 US,,Back Office Data Missing or Incorrect,2/15/2018 15:00,,,Item,0,4/2/2018 11:37,"Doe, Monique",,Item,sites/na/rd/ce/Lists/Live Site Issues
 523,Duplicate payroll elements found in SLS data,"Customer: 00000000000
@@ -70,8 +70,8 @@ Incident automatically closed after 3 days in the Resolved state.",D-36739,"
 
 ",Development,1/9/2018 12:04,0,Production,1/9/2018 13:32,2,Closed,P2,"Li, Doe;#146","Contact address had Puerto Rico on the State field. MS passed the address validation but during subscription provisioning, it failed. Doe was able to update the Bill To address on the Partner Center portal. Then resend the SR. All SRs are closed.",D-36731,"
 ",Office 365 US,,Back Office Data Missing or Incorrect,1/9/2018 13:32,,,Item,0,1/9/2018 13:35,"Tan-Doe, Joe",,Item,sites/na/rd/ce/Lists/Live Site Issues
-518,O365 US - Customer address failed MS validation,"  Use Case: Close Service Request  
-Role=""SageNA.CE.Common.BackgroundTasks"" Message=""[2018-01-09T15:22:07.8804560Z][Error] [CustomerId:4001713571] ServiceRequest [0000000000000000000] related to product 'Microsoft Office 365 (US)' has unaccepted closing status 'RejectRecycle'. [ServiceRequestSvc.ProcessForClose]  ",Development,1/9/2018 7:24,0,Production,1/9/2018 10:55,2,Closed,P2,"Li, Doe;#146","  Contact address had Puerto Rico on the State field.  MS passed the address validation but during subscription provisioning, it failed.  Doe was able to update the Bill To address on the Partner Center portal.  Then resend the SR.  All SRs are closed.  
+518,020202020 - Customer address not validated  by MS,"  Use Case: Close Service Request  
+Role=""SageNA.CE.Common.BackgroundTasks"" Message=""[2018-01-09T15:22:07.8804560Z][Error] [CustomerId:020202020] ServiceRequest [0000000000000000000] related to product 'Microsoft Office 365 (US)' has unaccepted closing status 'RejectRecycle'. [ServiceRequestSvc.ProcessForClose]  ",Development,1/9/2018 7:24,0,Production,1/9/2018 10:55,2,Closed,P2,"Li, Doe;#146","  Contact address had Puerto Rico on the State field.  MS passed the address validation but during subscription provisioning, it failed.  Doe was able to update the Bill To address on the Partner Center portal.  Then resend the SR.  All SRs are closed.  
 
   ",D-36731,"
 ",Office 365 US,,Back Office Data Missing or Incorrect,1/9/2018 10:55,,,Item,0,1/9/2018 13:36,"Tan-Doe, Joe",,Item,sites/na/rd/ce/Lists/Live Site Issues
