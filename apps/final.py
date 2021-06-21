@@ -28,8 +28,6 @@ from nlp.nlpModelProvider import NlpModelProvider
 
 cwd = os.getcwd()
 path = f'{cwd}/data/Live Site Issues.csv'
-MODEL_LOCATION = f"{cwd}/models/similar_sentence.model"
-
 
 liveSiteAll = pd.read_csv(path)
 liveSiteAll.drop(['App Created By','App Modified By','Content Type','Modified','Modified By','Item Type','Item Type','Defect number','Assigned To','Status','Time Taken CE to Resolve the Issue','Folder Child Count','Path','Item Child Count','Time taken to unblock the customer'], inplace=True, axis=1)
@@ -44,7 +42,7 @@ liveSiteAllDescSolSubset = liveSiteAllDescSol.head(20)
 
 data = liveSiteAllDescSolSubset.values.tolist()
 
-modlelProvider = NlpModelProvider(MODEL_LOCATION)
+modlelProvider = NlpModelProvider()
 
 nlpTrainedModel = modlelProvider.getModel()
 
@@ -96,6 +94,20 @@ layout = html.Div([dbc.Container([dbc.Row([dbc.Col(dbc.Card(dbc.Row([dcc.Link(ht
 
         body=True, color="dark"))]),
         html.Br(),
+        dbc.Row([dbc.Col(html.H1(children='Use Natural Language Processing to provide solutions to customer support problems..'), className="mb-4")]),
+         html.Br(),
+          html.Br(),
+        dbc.Row([dbc.Col(dbc.Card(html.H3(children='Introduction', className="text-center text-light bg-dark"), body=True, color="dark"))]),
+         html.Br(),
+         html.P(children="The Goal of this report is to explore customer support tickets data, analyze the text using Natural Language Processing (NLP) and propose solutions to customer issues based on existing information and trained unsupervised model. "),
+         html.P(children='''
+         The business problem we try to solve is to provide immediate answers to issues raised by the customer while saving company resources. 
+         The system we want to provide can be consumed by support, sales operations and even internal engineering teams. 
+         The data sets to be used, contain large volume of available information of how to solve wide array of product and system related issues. 
+         We want to provide more fluent and natural way of accessing this information and obtaining the resolution without the need to manually dig
+            the data or relay on specific person domain knowledge.
+         '''),
+
         dbc.Row([dbc.Col(html.H6(children='We are going to vecorize service support helpers descriptions and we will find what are the most common words in the issues sections.'), className="mb-4")]),
 
         html.Br(),
