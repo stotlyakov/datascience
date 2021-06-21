@@ -13,8 +13,8 @@ class NlpModelProvider(object):
 
     stop_words = set(stopwords.words('english'))
 
-    def __init__(self, modelLocation):
-        self._modelLocation = modelLocation
+    def __init__(self):
+        self._modelLocation = "similar_sentence.model"
 
     
     def generateModel(self, data):
@@ -46,10 +46,8 @@ class NlpModelProvider(object):
                         epochs=20)
     
         # Save model. 
-        with open(self._modelLocation,'wb') as f:
-            dill.dump(model, f)
 
-        #model.save(self._modelLocation)
+        model.save(self._modelLocation)
         return model
 
     def getModel(self):
