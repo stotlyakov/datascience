@@ -3,6 +3,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import nltk
 from pathlib import Path
+import dill
 nltk.download('stopwords')
 nltk.download('punkt')
 
@@ -45,7 +46,10 @@ class NlpModelProvider(object):
                         epochs=20)
     
         # Save model. 
-        model.save(self._modelLocation)
+        with open(self._modelLocation,'wb') as f:
+            dill.dump(model, f)
+
+        #model.save(self._modelLocation)
         return model
 
     def getModel(self):
