@@ -89,10 +89,8 @@ dict_of_fig = dict({
 figMostCommon = go.Figure(dict_of_fig)
 
 
-
-
-layout = html.Div([dbc.Container([dbc.Row([dbc.Col(dbc.Card(dbc.Row([dcc.Link(html.A('GitHub'), href="https://github.com/stotlyakov/datascience/blob/main/apps/hw14.py", style={'color': 'white', 'text-decoration': 'underline'}, target="_blank"),
-        dcc.Link(html.A('Python notebook for HW 14'), href="https://github.com/stotlyakov/datascience/blob/main/notebooks/HW14.ipynb", style={'color': 'white', 'text-decoration': 'underline', 'margin-left':'10px','margin-right':'10px'},target="_blank"),]),
+layout = html.Div([dbc.Container([dbc.Row([dbc.Col(dbc.Card(dbc.Row([dcc.Link(html.A('GitHub'), href="https://github.com/stotlyakov/datascience/blob/main/apps/final.py", style={'color': 'white', 'text-decoration': 'underline'}, target="_blank"),
+        dcc.Link(html.A('Python NLP notebook'), href="https://github.com/stotlyakov/datascience/blob/main/notebooks/final.ipynb", style={'color': 'white', 'text-decoration': 'underline', 'margin-left':'10px','margin-right':'10px'},target="_blank"),]),
 
         body=True, color="dark"))]),
         html.Br(),
@@ -212,7 +210,7 @@ layout = html.Div([dbc.Container([dbc.Row([dbc.Col(dbc.Card(dbc.Row([dcc.Link(ht
         html.Br(),
         dbc.Row([dbc.Col(html.H6(children=[html.Span('After we analyze the most common terms in the Issues and Description texts, we can train our model using '), html.Code('genism Doc2Vec')]), className="mb-4")]),
 
-        html.P(children=["The code creating this model can be found in its dedicated class",dcc.Link(html.A('here'), href="", style={'color': 'white', 'text-decoration': 'underline', 'margin-left':'10px','margin-right':'10px'},target="_blank")]),
+        html.P(children=["The code creating this model can be found in its dedicated class",dcc.Link(html.A('here'), href="https://github.com/stotlyakov/datascience/blob/main/nlp/nlpModelProvider.py", style={'color': 'white', 'text-decoration': 'underline', 'margin-left':'10px','margin-right':'10px'},target="_blank")]),
         html.Br(),
 
         dbc.Row([dbc.Col(dbc.Card(html.H3(children='Uses of the trained model', className="text-center text-light bg-dark"), body=True, color="dark"))]),
