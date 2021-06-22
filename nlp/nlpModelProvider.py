@@ -1,25 +1,24 @@
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
 import nltk
 from pathlib import Path
-import dill
 nltk.download('stopwords')
 nltk.download('punkt')
-
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
 
 class NlpModelProvider(object):
     """Generate trained model from the eprovided data frame"""
 
-    stop_words = set(stopwords.words('english'))
+    stop_words = stopwords.words('english')
+    tagged_data = None
 
     def __init__(self):
         self._modelLocation = "similar_sentence.model"
-
-    
+   
     def generateModel(self, data):
         #https://www.nltk.org/api/nltk.tokenize.html
-        stop_words = set(stopwords.words('english'))
+        stop_words = stopwords.words('english')
+        stop_words.extend(['-'])
 
         tagged_data = [TaggedDocument(words=self.__cleanTokens(word_tokenize(_d.lower())), tags=[str(i)]) for i, _d in enumerate(data)]
 
@@ -35,18 +34,15 @@ class NlpModelProvider(object):
                         alpha=alpha, 
                         min_alpha=minimum_alpha,
                         dm =1,#distributed memory (PV-DM) 
-                       min_count=1,#very critical, if min is 2 ormore the result is inacurate
-                       workers=4)
+                        min_count=1,#very critical, if min is 2 ormore the result is inacurate
+                        workers=4)
         model.build_vocab(tagged_data)
 
         # Train the model based on epochs parameter
         for epoch in range(max_epochs):
-            model.train(tagged_data,
-                        total_examples=model.corpus_count,
-                        epochs=20)
+            model.train(tagged_data, total_examples=model.corpus_count, epochs=20)
     
         # Save model. 
-
         model.save(self._modelLocation)
         return model
 

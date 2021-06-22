@@ -11,6 +11,9 @@
 }*/
 
 /* CSS Simple Pre Code */
+code {
+    font-size: 100%
+}
 pre {
     background: #333;
     white-space: pre;
@@ -58,3 +61,6 @@ pre.code-py code {
     color: #91a7ff;
 }
 
+#figMostCommonWords {
+    width: 550px;
+}
