@@ -5,7 +5,7 @@ import dash_bootstrap_components as dbc
 from app import server
 from app import app
 # import all pages in the app
-from apps import hw1to6, hw7, hw8,hw9, final, home
+from apps import hw1to6, hw7, hw8,hw9, hw15, final, home
 
 # building the navigation bar
 # https://github.com/facultyai/dash-bootstrap-components/blob/master/examples/advanced-component-usage/Navbars.py
@@ -16,6 +16,7 @@ dropdown = dbc.DropdownMenu(
         dbc.DropdownMenuItem("HW 7", href="/hw7"),
         dbc.DropdownMenuItem("HW 8", href="/hw8"),
         dbc.DropdownMenuItem("HW 9", href="/hw9"),
+        dbc.DropdownMenuItem("HW 15", href="/hw15"),
         #dbc.DropdownMenuItem("HW 12-13", href="/hw12_13"),
         #dbc.DropdownMenuItem("HW 14", href="/hw14"),
          dbc.DropdownMenuItem("Final", href="/final"),
@@ -93,6 +94,8 @@ def display_page(pathname):
         return final.layout
     elif pathname == '/hw9':
         return hw9.layout
+    elif pathname == '/hw15':
+        return hw15.layout
     else:
         return home.layout
 
