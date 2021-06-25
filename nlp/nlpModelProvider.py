@@ -59,6 +59,9 @@ class NlpModelProvider(object):
         filtered_sentence = []
  
         for w in word_tokens:
-            if w not in self.stop_words:
+      #Clean up all numbers and words with numbers but keep 365 because it has meaning to us, this increases the accuracy rate by 2-3%
+            if re.match('^((?!365)\w*[0-9]\w*)$', w):
+                continue
+            else:
                 filtered_sentence.append(w)
         return filtered_sentence

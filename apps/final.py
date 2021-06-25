@@ -160,7 +160,7 @@ layout = html.Div([dbc.Container([dbc.Row([dbc.Col(dbc.Card(dbc.Row([dcc.Link(ht
                     html.P("‘ourselves’, ‘hers’, ‘between’, ‘yourself’, ‘but’, ‘again’, ‘there’, ‘about’, ‘once’, ‘during’, ‘out’, ‘very’, ‘having’, ‘with’, ‘they’, ‘own’, ‘an’, ‘be’, ‘some’, ‘for’, ‘do’, ‘its’, ‘yours’, ‘such’, ‘into’, ‘of’, ‘most’, ‘itself’, ‘other’, ‘off’, ‘is’, ‘s’, ‘am’, ‘or’, ‘who’, ‘as’, ‘from’, ‘him’, ‘each’, ‘the’, ‘themselves’, ‘until’, ‘below’, ‘are’, ‘we’, ‘these’, ‘your’, ‘his’, ‘through’, ‘don’, ‘nor’, ‘me’, ‘were’, ‘her’, ‘more’, ‘himself’, ‘this’, ‘down’, ‘should’, ‘our’, ‘their’, ‘while’, ‘above’, ‘both’, ‘up’, ‘to’, ‘ours’, ‘had’, ‘she’, ‘all’, ‘no’, ‘when’, ‘at’, ‘any’, ‘before’, ‘them’, ‘same’, ‘and’, ‘been’, ‘have’, ‘in’, ‘will’, ‘on’, ‘does’, ‘yourselves’, ‘then’, ‘that’, ‘because’, ‘what’, ‘over’, ‘why’, ‘so’, ‘can’, ‘did’, ‘not’, ‘now’, ‘under’, ‘he’, ‘you’, ‘herself’, ‘has’, ‘just’, ‘where’, ‘too’, ‘only’, ‘myself’, ‘which’, ‘those’, ‘i’, ‘after’, ‘few’, ‘whom’, ‘t’, ‘being’, ‘if’, ‘theirs’, ‘my’, ‘against’, ‘a’, ‘by’, ‘doing’, ‘it’, ‘how’, ‘further’, ‘was’, ‘here’, ‘than’",
                         className="card-text",),]),], color="light"))]),
         html.Br(),
-
+        html.P(children="Before we go ahead and train the model for our purpose, we will gather some information about our data."),
         html.P(children="The code bellow will give some idea about the process used."),
         html.Pre(children = [html.Label(children = 'PY'), 
                     html.Code(children= "" + 
@@ -188,29 +188,28 @@ layout = html.Div([dbc.Container([dbc.Row([dbc.Col(dbc.Card(dbc.Row([dcc.Link(ht
                               "sort_order = sorted(vectorizer.vocabulary_.items(), key=lambda x: x[1], reverse=True)[:10] \n\n" + 
                               "xplot = [] \n" + "yplot = [] \n" + "for i in sort_order: \n" + 
                               "    xplot.append(i[1]) \n" + 
-                              "   yplot.append(i[0]) \n" + 
+                              "    yplot.append(i[0]) \n" + 
                               "dict_of_fig = dict({ \n" + 
                               "   'data': [{'type': 'bar', \n" + 
                               "             'x': xplot, \n" + 
                               "             'y': yplot}], \n" + 
-                              "  'layout': {'title': {'text': 'Most common words in the support ticket issues'}} \n" + 
+                              "   'layout': {'title': {'text': 'Most common words in the support ticket issues'}} \n" + 
                               "})\n" + "figMostCommon = go.Figure(dict_of_fig) \n\n" +
                               "# Create WordCloud from the Description column in the data \n" + 
                               "liveSiteAll = pd.read_csv(path) \n" + 
                               "wordcl = WordCloud(width=550, height=450).generate(" ".join(liveSiteAllDescTerms.values.tolist()).replace(r'\w*[0-9]\w*', "")) \n" + 
                               "wordcl.to_file(supportCloudTermsImageUrl) \n\n" + 
                     "\n")], className= 'code code-py'),
-        html.P(children="Before we go ahead and train the model for our purpose, we will gather some information about our data."),
         html.P(children="After vectorization of all words in the text, we display the top most occuring terms in the Issues section, on the left and Description section on the right."),
         html.Table([html.Tr([html.Td(dcc.Graph(id="figMostCommonWords", figure = figMostCommon, style={"display": "inline-block","width":"550"})),
            html.Td([html.Img(src="/assets/supportCloudTerms.png", width='550', style={"margin-left":"10px","margin-bottom":"5px"})])])]),
 
-
-
         html.Br(),
-        dbc.Row([dbc.Col(html.H6(children=[html.Span('After we analyze the most common terms in the Issues and Description texts, we can train our model using '), html.Code('genism Doc2Vec')]), className="mb-4")]),
-
-        html.P(children=["The code creating this model can be found in its dedicated class",dcc.Link(html.A('here'), href="https://github.com/stotlyakov/datascience/blob/main/nlp/nlpModelProvider.py", style={'color': 'white', 'text-decoration': 'underline', 'margin-left':'10px','margin-right':'10px'},target="_blank")]),
+        html.P(children=["We have analyzed the most common terms and more insights could be found in the",dcc.Link(html.A('Jupyter notebook'), href="https://github.com/stotlyakov/datascience/blob/main/notebooks/final.ipynb", style={'color': 'white', 'text-decoration': 'underline', 'margin-left':'10px','margin-right':'10px'},target="_blank")]),
+        dbc.Row([dbc.Col(html.H6(children=[html.Span('To provide the ability for the application to answer support questions we need to train the NLP model using '), html.Code('genism Doc2Vec')]), className="mb-4")]),
+       
+        html.P(children=["The code creating this model can be found in its dedicated",dcc.Link(html.A('Python class'), href="https://github.com/stotlyakov/datascience/blob/main/nlp/nlpModelProvider.py", style={'color': 'white', 'text-decoration': 'underline', 'margin-left':'10px','margin-right':'10px'},target="_blank")]),
+        
         html.Br(),
 
         dbc.Row([dbc.Col(dbc.Card(html.H3(children='Uses of the trained model', className="text-center text-light bg-dark"), body=True, color="dark"))]),

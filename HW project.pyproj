@@ -50,6 +50,9 @@
     <Compile Include="apps\hw8.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="apps\hw9.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="apps\__init__.py" />
     <Compile Include="index.py" />
     <Compile Include="nlp\nlpModelProvider.py">
